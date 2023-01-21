@@ -35,7 +35,7 @@ int NFAFragmentStackEmpty(NFAFragmentStack *ps)
  */
 void PushNFAFragment(NFAFragmentStack *ps, NFAFragment ele)
 {
-    if (MAX_STACK_LENGTH - 1 <= pS->top)
+    if (MAX_STACK_LENGTH - 1 <= ps->top)
         return;
     
     ps->top++;

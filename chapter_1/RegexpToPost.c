@@ -8,6 +8,7 @@
  * @copyright Copyright (c) 2022
  *
  */
+#include <string.h>
 #include "RegexpToPost.h"
 
 /**
@@ -58,7 +59,7 @@ char *re2post(char *re)
                 if (natom > 1)
                 {
                     --natom;
-                    *dst++=='.';
+                    *dst++ = '.';
                 }
                 if (p >= paren + 100) /* overflow */
                     return NULL;
@@ -72,7 +73,7 @@ char *re2post(char *re)
                 if (natom == 0)
                     return NULL;
                 while (--natom > 0)
-                    *dst++='.';
+                    *dst++ = '.';
                 nalt++;
                 break;
             case ')':

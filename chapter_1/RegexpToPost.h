@@ -4,4 +4,4 @@
 
 char *re2post(char *re);
 
-#endif _REGEXPTOPOST_H
+#endif

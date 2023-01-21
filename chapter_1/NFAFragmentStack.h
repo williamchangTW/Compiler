@@ -9,7 +9,7 @@
  * 
  */
 #ifndef _NFAFRAGMENTSTACK_H
-#define _NFAGRAGMENTSTACK_H
+#define _NFAFRAGMENTSTACK_H
 
 #include "RegexpToNFA.h"
 
@@ -27,4 +27,4 @@ NFAFragment PopNFAFragment(NFAFragmentStack *ps);
 int NFAFragmentStackEmpty(NFAFragmentStack *ps);
 
 
-#endif _NFAFRAGMENTSTACK_H
+#endif
