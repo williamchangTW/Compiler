@@ -1,4 +1,7 @@
 #include "RemoveLeftRecursion.h"
+#include <string.h>
+#include <stdio.h>
+#include <stdlib.h>
 
 const char *VoidSymbol = "$ ";
 const char *Postfix = "'";
@@ -8,7 +11,7 @@ int main(int argc, char **argv)
     Rule *pHead = InitRules();
 
     printf("Before Remove Left Recursion:\n");
-    printRule(pHead);
+    PrintRule(pHead);
 
     RemoveLeftRecursion(pHead);
 
@@ -120,7 +123,7 @@ RuleSymbol *CreateSymbol()
     RuleSymbol *pSymbol = (RuleSymbol*)malloc(sizeof(RuleSymbol));
 
     pSymbol->pNextSymbol = NULL;
-    pSymbol->Other = NULL;
+    pSymbol->pOther = NULL;
     pSymbol->isToken = -1;
     pSymbol->TokenName[0] = '\0';
     pSymbol->pRule = NULL;
@@ -131,7 +134,7 @@ RuleSymbol *CreateSymbol()
 Rule *FindRule(Rule *pHead, const char *RuleName)
 {
     Rule *pRule;
-    for (pRule = pHead; pRule != NULL; pRule = pRule->NextRule)
+    for (pRule = pHead; pRule != NULL; pRule = pRule->pNextRule)
     {
         if (0 == strcmp(pRule->RuleName, RuleName))
         {
